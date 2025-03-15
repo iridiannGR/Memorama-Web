@@ -3,24 +3,53 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Memorama Básico</title>
+    <title>Memorama con Niveles de Dificultad</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1>Memorama Básico</h1>
+    <h1>Juego de Memorama</h1>
 
     <!-- Menú de selección de dificultad -->
     <div id="difficulty-menu">
       <h2>Selecciona la dificultad:</h2>
-      <button id="easy">Fácil (2x4)</button>
-      <button id="medium">Medio (4x4)</button>
-      <button id="hard">Difícil (6x6)</button>
+      <button id="easy">Fácil (4x4) - 60 segundos</button>
+      <button id="medium">Medio (4x4) - 30 segundos</button>
+      <button id="hard">Difícil (6x6) - 20 segundos</button>
     </div>
 
     <!-- Contenedor del juego (oculto inicialmente) -->
     <div id="game-container" class="hidden">
+      <div id="timer">Tiempo restante: <span id="time">60</span>s</div>
+      <div id="score">Puntuación: <span id="score-value">0</span></div>
       <div id="game-board" class="board"></div>
+      <div id="question-container" class="hidden">
+        <p id="question-text"></p>
+        <input type="text" id="answer-input" placeholder="Tu respuesta" />
+        <button id="submit-answer">Responder</button>
+        <div id="question-timer">
+          Tiempo para responder: <span id="question-time">10</span>s
+        </div>
+      </div>
+      <div id="feedback" class="hidden"></div>
     </div>
+
+    <!-- Pantalla de Game Over (oculta inicialmente) -->
+    <div id="game-over" class="hidden">
+      <h2>¡Game Over!</h2>
+      <p>Tu puntuación final: <span id="final-score">0</span></p>
+      <button id="restart-button">Volver a Jugar</button>
+    </div>
+
+    <!-- Pantalla de Victoria (oculta inicialmente) -->
+    <div id="win-screen" class="hidden">
+      <h2>¡Has Ganado!</h2>
+      <p>Tu puntuación final: <span id="win-score">0</span></p>
+      <button id="win-restart-button">Volver a Jugar</button>
+    </div>
+
+    <!-- Sonidos -->
+    <audio id="correct-sound" src="sounds/correct.mp3"></audio>
+    <audio id="wrong-sound" src="sounds/wrong.mp3"></audio>
 
     <script src="script.js"></script>
   </body>

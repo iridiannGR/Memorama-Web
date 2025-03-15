@@ -9,31 +9,36 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #f0f0f0;
+    background-image: url("img/fondo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
   }
   
   h1 {
     font-size: 36px;
-    color: #333;
+    color: #ff69b4;
     margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   }
   
   /* Menú de dificultad */
   #difficulty-menu {
     text-align: center;
     margin-top: 20px;
-    background-color: #fff;
+    background-color: rgba(255, 182, 193, 0.9);
     padding: 20px;
-    border: 2px solid #ccc;
+    border: 2px solid #ff69b4;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
   
   #difficulty-menu button {
     padding: 10px 20px;
     font-size: 18px;
     margin: 10px;
-    background-color: #007bff;
+    background-color: #ff69b4;
     color: white;
     border: none;
     border-radius: 5px;
@@ -42,20 +47,22 @@ body {
   }
   
   #difficulty-menu button:hover {
-    background-color: #0056b3;
+    background-color: #ff1493;
   }
   
   /* Contenedor del juego */
   #game-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Cambiamos a horizontal */
+    align-items: flex-start;
     gap: 20px;
     padding: 20px;
-    background-color: #fff;
-    border: 2px solid #ccc;
+    background-color: rgba(255, 182, 193, 0.9);
+    border: 2px solid #ff69b4;
     border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-width: 100%; /* Asegura que no se desborde */
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
   }
   
   /* Tablero de cartas */
@@ -107,7 +114,152 @@ body {
     transform: rotateY(180deg);
   }
   
-  /* Ocultar elementos */
+  /* Temporizador y puntuación */
+  #timer,
+  #score {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px;
+    color: #ff1493;
+  }
+  
+  /* Contenedor de preguntas */
+  #question-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .hidden {
     display: none;
+  }
+  
+  /* Campo de respuesta */
+  #answer-input {
+    padding: 10px;
+    font-size: 18px;
+    border: 2px solid #ff69b4;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  /* Botón de responder */
+  #submit-answer {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #submit-answer:hover {
+    background-color: #ff1493;
+  }
+  
+  /* Mensaje de retroalimentación */
+  #feedback {
+    margin-top: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff1493;
+  }
+  
+  /* Temporizador de preguntas */
+  #question-timer {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #ff1493;
+  }
+  
+  /* Pantalla de Game Over */
+  #game-over {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 182, 193, 0.95);
+    padding: 30px;
+    border: 2px solid #ff69b4;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  #game-over h2 {
+    font-size: 36px;
+    color: #ff1493;
+    margin-bottom: 20px;
+  }
+  
+  #game-over p {
+    font-size: 24px;
+    color: #ff1493;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón de reiniciar */
+  #restart-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #restart-button:hover {
+    background-color: #ff1493;
+  }
+  
+  /* Pantalla de Victoria */
+  #win-screen {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 182, 193, 0.95);
+    padding: 30px;
+    border: 2px solid #ff69b4;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+  }
+  
+  #win-screen h2 {
+    font-size: 36px;
+    color: #ff1493;
+    margin-bottom: 20px;
+  }
+  
+  #win-screen p {
+    font-size: 24px;
+    color: #ff1493;
+    margin-bottom: 20px;
+  }
+  
+  /* Botón de reiniciar en la pantalla de victoria */
+  #win-restart-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #win-restart-button:hover {
+    background-color: #ff1493;
   }
