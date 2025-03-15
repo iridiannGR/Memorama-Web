@@ -1,0 +1,113 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+  }
+  
+  h1 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Menú de dificultad */
+  #difficulty-menu {
+    text-align: center;
+    margin-top: 20px;
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #difficulty-menu button {
+    padding: 10px 20px;
+    font-size: 18px;
+    margin: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #difficulty-menu button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Contenedor del juego */
+  #game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Tablero de cartas */
+  .board {
+    display: grid;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Cartas */
+  .card {
+    width: 100px;
+    height: 140px;
+    perspective: 1000px;
+    cursor: pointer;
+  }
+  
+  .card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+  }
+  
+  .card.flipped .card-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+  }
+  
+  .card-front img,
+  .card-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  
+  .card-front {
+    transform: rotateY(180deg);
+  }
+  
+  /* Ocultar elementos */
+  .hidden {
+    display: none;
+  }
