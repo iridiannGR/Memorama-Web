@@ -29,7 +29,7 @@ let questionActive = false;
 
 // Datos de las cartas
 const cardsData = [
-  { name: "Diapositiva1", img: "img/Diapositiva1.png" },
+  { name: "Diapositiva1", img: "./img/Diapositiva1.png" },
   { name: "Diapositiva2", img: "img/Diapositiva2.png" },
   { name: "Diapositiva3", img: "img/Diapositiva3.png" },
   { name: "Diapositiva4", img: "img/Diapositiva4.png" },
